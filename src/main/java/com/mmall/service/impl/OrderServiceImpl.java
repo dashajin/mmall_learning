@@ -292,7 +292,6 @@ public class OrderServiceImpl implements IOrderService {
         for (Order order : orderList) {
             List<OrderItem> orderItemList = Lists.newArrayList();
             if (userId == null) {
-                // TODO: 18/1/24 管理员查询时,不需要传userId
                 orderItemList = orderItemMapper.getByOrderNo(order.getOrderNo());
             } else {
                 orderItemList = orderItemMapper.getByUserIdOrderNo(order.getUserId(), order.getOrderNo());
